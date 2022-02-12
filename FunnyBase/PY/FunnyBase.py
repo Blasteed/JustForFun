@@ -9,6 +9,7 @@ from datetime import datetime
 print(colored('\n\n\n    FUNNYBASE (PYBASE) BY KARFEE    \n\n', 'magenta'))
 
 
+#ENDMENU
 # ----------------------------------------------------------------------------------------------------------------------------------------------
 # a function to call the end menu
 def EndMenu():
@@ -53,6 +54,7 @@ def EndMenu():
 # ----------------------------------------------------------------------------------------------------------------------------------------------
 
 
+#BASECREATE
 # ----------------------------------------------------------------------------------------------------------------------------------------------
 # a function to create databases
 def BaseCreate():
@@ -60,22 +62,50 @@ def BaseCreate():
     # colored input to choose database's name with string casting 
     base_creating = str(input(colored("How will be this base named?  ", 'yellow')))
     
-    # to transform the string in an all lowercases string
+    # to transform the string in an all lowercase string
     base_creating = str.lower(base_creating)
+
+    # colored input to choose database's columns' number with integer casting
+    columns_creating = int(input(colored("How much columns will this base have?  ", 'yellow')))
     
-    # creating and writing the bases's name inside it and the date as first line, then closes it
+    # creating and writing the base's name inside it and the date as first line, then closes it
     created_base = open(f'system_files\\{base_creating}.txt', 'w')
-    created_base.write(f'{base_creating}.txt Database Created With FunnyBase at {datetime.now()}')
+    created_base.write(f'{base_creating}.txt Database Created With FunnyBase at {datetime.now()}\n')
+    created_base.close()
+
+    # reopen the file to append
+    created_base = open(f'system_files\\{base_creating}.txt', 'a')
+
+    # it writes the number of columns as 'r' inside the second line of the file
+    for columns in range(columns_creating):
+        created_base.write("c")
+
+    # goes on another line
+    created_base.write('\n')
+
+    # closes the file
+    created_base.close()
+
+    # reopen another time the file to append
+    created_base = open(f'system_files\\{base_creating}.txt', 'a')
+
+    # for the choosen number of columns, the program will ask their names, with colored output
+    for columns in range(columns_creating):
+        column_name = str(input(colored(f"What will be the name of the column number {columns + 1}?  ", 'yellow')))
+        created_base.write(f"{column_name}\n")
+
+    # closes the file
     created_base.close()
     
     # "database created" colored state printing with \n formatting
-    print(colored(f"\n\nDATABASE '{base_creating}' CREATED!\n\n", 'blue'))
+    print(colored(f"\n\nDATABASE '{base_creating}' WITH {columns_creating} COLUMNS CREATED!\n\n", 'blue'))
 
     # calling end menu
     EndMenu()
 # ----------------------------------------------------------------------------------------------------------------------------------------------
 
 
+#BASEREAD
 # ----------------------------------------------------------------------------------------------------------------------------------------------
 # a function to read databases
 def BaseRead():
@@ -121,6 +151,7 @@ def BaseRead():
 # ----------------------------------------------------------------------------------------------------------------------------------------------
 
 
+#BASEMOD
 # ----------------------------------------------------------------------------------------------------------------------------------------------
 # a function to modify databases
 def BaseMod():
@@ -166,6 +197,7 @@ def BaseMod():
 # ----------------------------------------------------------------------------------------------------------------------------------------------
 
 
+#BASEDEL
 # ----------------------------------------------------------------------------------------------------------------------------------------------
 # a function to delete databases
 def BaseDel():
@@ -217,6 +249,7 @@ def BaseDel():
 # ----------------------------------------------------------------------------------------------------------------------------------------------
 
 
+#STARTMENU
 # ----------------------------------------------------------------------------------------------------------------------------------------------
 # a function to call the start menu in every moment
 def StartMenu():
@@ -281,6 +314,7 @@ def StartMenu():
 # ----------------------------------------------------------------------------------------------------------------------------------------------
 
 
+#MAIN
 # ----------------------------------------------------------------------------------------------------------------------------------------------
 # main function to recall it in a single script
 def Main():
