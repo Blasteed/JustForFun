@@ -1,0 +1,3 @@
+# C -Ex
+
+This dir contains some C codes examples... Just for fun...
