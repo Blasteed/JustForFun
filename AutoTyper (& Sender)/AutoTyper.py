@@ -1,15 +1,27 @@
 import time
 import pyautogui
+from termcolor import colored
 
 print('\n\n')
 
-text = input('text: ')
-repeat = input("number of times: ")
+print(colored("   AUTOTYPER BY KARFEE\n", 'magenta'))
 
-time.sleep(3)
+text = input(colored("Text to send: ", 'yellow'))
+emote = input(colored("Emote (click enter if you don't use it): ", 'yellow'))
+repeats = input(colored("Times to repeat: ", 'yellow'))
 
-for n in range(int(repeat)):
-    pyautogui.write(str(text))
+print('\n\n')
+
+print(colored(f"SENDING {text} {emote} FOR {repeats} TIMES\nWAITING 5 SECONDS TO START, GET READY !\n\n", 'blue'))
+
+time.sleep(5)
+
+print(colored("5 SECONDS PASSED, STARTING !\n\n", 'blue'))
+
+for n in range(int(repeats)):
+    pyautogui.write(f"{text} {emote}")
     pyautogui.press('return')
 
-print('\n\n')
+print(colored("PROCESS ENDED, KILLING !", 'blue'))
+
+print('\n')
