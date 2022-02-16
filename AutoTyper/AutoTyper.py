@@ -12,15 +12,15 @@ print(colored("   AUTOTYPER BY KARFEE\n", 'magenta'))
 def EndMenu():
 
     # Menu choice with colored print
-    choice = int(input("Choose an option:\n\n1. Continue\n2. Exit\n\n" + colored("Choice: ", 'yellow')))
+    choice = input("\nChoose an option:\n\n1. Continue\n2. Exit\n\n" + colored("Choice: ", 'yellow'))
 
     # First choice, restarting
-    if choice == 1:
+    if int(choice) == 1:
         print('\n')
         Main()
 
     # Second choice, exit
-    if choice == 2:
+    if int(choice) == 2:
         print('\n')
         exit()
 
