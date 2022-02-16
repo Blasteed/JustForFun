@@ -8,7 +8,7 @@ print('\n\n')
 print(colored("   AUTOTYPER BY KARFEE\n", 'magenta'))
 
 
-#Endmenu func
+# Endmenu func
 def EndMenu():
 
     # Menu choice with colored print
@@ -30,11 +30,12 @@ def EndMenu():
         EndMenu()
 
 
+# Main func
 def Main():
     # Colored inputs of vars to run the code
     text = input(colored("Text to send: ", 'yellow'))
     repeats = input(colored("Times to repeat: ", 'yellow'))
-    delay = input(colored("Delay's seconds between messages (Leave it empty if you don't use it): ", 'yellow'))
+    delay = int(input(colored("Delay's seconds between messages (Leave it empty if you don't use it): ", 'yellow')))
 
     # Control of var to optimise printings
     if delay == '':
