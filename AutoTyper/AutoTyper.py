@@ -8,7 +8,7 @@ print('\n\n')
 print(colored("   AUTOTYPER BY KARFEE\n", 'magenta'))
 
 
-#Endmenu func
+# Endmenu func
 def EndMenu():
 
     # Menu choice with colored print
