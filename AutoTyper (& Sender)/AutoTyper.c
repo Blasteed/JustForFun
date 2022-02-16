@@ -1,20 +1,25 @@
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
 
-char text[10];
-int repeat;
+char text[15];
 
+int repeats;
+
+void asking ()
+{
+    printf("Text: ");
+    scanf("%s", text);
+
+    printf("Repeats: ");
+    scanf("%d", repeats);
+
+    printf("\n\nSENDING %s FOR %d TIMES\n\n", text, repeats);
+
+    asking ();
+}
 
 int main ()
 {
+    asking ();
 
-    printf("Text: ");
-    gets(text)
-    
-    printf("Repeats: ");
-    scanf(repeat)
-
-    
-    
-    return 0
+    return 0;
 }

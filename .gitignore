@@ -2,3 +2,4 @@ FunnyBase/venv
 FunnyBase/.idea
 FunnyBase/system_files
 *.exe
+*.o
