@@ -64,8 +64,8 @@ def Main():
         pyautogui.write(f"{text}")
 
         if delay > 0:
-            time.sleep(int(delay))
             print(colored(f"RESPECTING {delay}s OF DELAY - {n + 1}\n", 'blue'))
+            time.sleep(int(delay))
         else:
             pass
 
