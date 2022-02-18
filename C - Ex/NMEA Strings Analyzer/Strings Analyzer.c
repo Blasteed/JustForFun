@@ -1,53 +1,28 @@
+// YourKarfee - NMEA Sentences Slicer for School
+
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
-int i = 0;
+char* NMEA_Sentence = "$GPGGA,110617.00,41XX.XXXXX,N,00831.54761,W,1,05,2.68,129.0,M,50.1,M,,*42";
 
-char string_to_analyze[100] = "";
-
-char NMEA_Type[6] = "";
-char NMEA_Time[6] = "";
-char NMEA_Latitude[10] = "";
-char NMEA_Longitude[10] = "";
-char NMEA_Diluition[4] = "";
-
-int iForStart = 0;
-int iForStop = 5;
+char NMEA_Type[6];
+char NMEA_Time[6];
+char NMEA_Latitude[11];
+char NMEA_Latitude_Dir[1];
+char NMEA_Longitude[11];
+char NMEA_Longitude_Dir[1];
+char NMEA_Diluition[4];
 
 int main ()
 {
-    printf ( "\n\n\nInserire stringa NEO-6 NMEA da Analizzare:  " );
-    scanf ( "%s", string_to_analyze );
+    strncpy ( NMEA_Type, &NMEA_Sentence[0], 6 );
+    strncpy ( NMEA_Time, &NMEA_Sentence[7], 6 );
+    strncpy ( NMEA_Latitude, &NMEA_Sentence[17], 10 );
+    strncpy ( NMEA_Latitude_Dir, &NMEA_Sentence[28], 1 );
+    strncpy ( NMEA_Longitude, &NMEA_Sentence[30], 11 );
+    strncpy ( NMEA_Longitude_Dir, &NMEA_Sentence[42], 1 );
+    strncpy ( NMEA_Diluition, &NMEA_Sentence[49], 4 );
 
-    printf ( "\n\nLa stringa NEO-6 NMEA che hai inserito corrisponde a:  %s", string_to_analyze );
-
-    for ( i = 0; i >= strlen(string_to_analyze); i++ )
-    {
-        NMEA_Type[i] = string_to_analyze[i];
-
-        if ( NMEA_Type[6] != "" )
-        {
-            NMEA_Time[i] = string_to_analyze[i];
-        }
-
-        if ( NMEA_Time[6] != "" )
-        {
-            NMEA_Latitude[i] = string_to_analyze[i];
-        }
-
-        if ( NMEA_Longitude[10] != "" )
-        {
-            NMEA_Longitude[i] = string_to_analyze[i];
-        }
-
-        if ( NMEA_Latitude[10] != "" )
-        {
-            NMEA_Diluition[i] = string_to_analyze[i];
-        }
-    }
-
-    printf( "\n\nNMEA_TYPE:  %s\nNMEA_TIME:  %s\nNMEA_LATITUDE:  %s\nNMEA_LONGITUDE:  %s\nNMEA_DILUITION:  %s\n", NMEA_Type, NMEA_Time, NMEA_Latitude, NMEA_Longitude, NMEA_Diluition );
+    printf( "\n\nNMEA_TYPE:  %s\nNMEA_TIME:  %s\nNMEA_LATITUDE:  %s\nNMEA_LATITUDE_DIR:  %s\nNMEA_LONGITUDE:  %s\nNMEA_LONGITUDE_DIR:  %s\nNMEA_DILUITION:  %s\n", NMEA_Type, NMEA_Time, NMEA_Latitude, NMEA_Latitude_Dir, NMEA_Longitude, NMEA_Longitude_Dir, NMEA_Diluition );
 }
-
-
-
