@@ -3,23 +3,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "NMEA.h"
 
-#define TIME           2
-#define LATITUDE       3
-#define LATITUDE_DIR   4
-#define LONGITUDE      5
-#define LONGITUDE_DIR  6
-#define DILUITION      9
+char* sNMEATime;
+char* sNMEALatitude;
+char* sNMEALatitudeCard;
+char* sNMEALongitude;
+char* sNMEALongitudeCard;
+// char* sNMEASatellitesNumb;
+char* sNMEADiluition;
 
-char* NMEA_Time;
-char* NMEA_Latitude;
-char* NMEA_Latitude_Dir;
-char* NMEA_Longitude;
-char* NMEA_Longitude_Dir;
-char* NMEA_Satellites_N;
-char* NMEA_Diluition;
-
-int main ()
+void Parser ()
 {
     char NMEA_Sentence[100];
 
@@ -27,61 +21,61 @@ int main ()
 
     strcpy ( NMEA_Sentence, "$GPGGA,110617.00,41XX.XXXXX,N,00831.54761,W,1,05,2.68,129.0,M,50.1,M,,*42" );
 
-    char* slicing = strtok ( NMEA_Sentence, "," );
+    char* sSentenceSlicer = strtok ( NMEA_Sentence, "," );
 
-    while ( slicing != NULL )
+    while ( sSentenceSlicer != NULL )
     {
         NMEA_Element_Index++;
 
-        slicing = strtok ( NULL, "," );
+        sSentenceSlicer = strtok ( NULL, "," );
 
         switch ( NMEA_Element_Index )
         {
             case TIME:
 
-                NMEA_Time = slicing;
+                sNMEATime = sSentenceSlicer;
 
-                printf ( "NMEA_TIME:  %s\n", NMEA_Time );
+                printf ( "TIME:  %s\n", sNMEATime );
 
                 break;
 
             case LATITUDE:
 
-                NMEA_Latitude = slicing;
+                sNMEALatitude = sSentenceSlicer;
 
-                printf ( "NMEA_LATITUDE:  %s\n", NMEA_Latitude );
+                printf ( "LATITUDE:   %s\n", sNMEALatitude );
 
                 break;
 
             case LATITUDE_DIR:
 
-                NMEA_Latitude_Dir = slicing;
+                sNMEALatitudeCard = sSentenceSlicer;
 
-                printf ( "NMEA_LATITUDE_DIR:  %s\n", NMEA_Latitude_Dir );
+                printf ( "CARD_LATITUDE:   %s\n", sNMEALatitudeCard );
 
                 break;
 
             case LONGITUDE:
 
-                NMEA_Longitude = slicing;
+                sNMEALongitude = sSentenceSlicer;
 
-                printf ( "NMEA_LONGITUDE:  %s\n", NMEA_Longitude );
+                printf ( "LONGITUDE:  %s\n", sNMEALongitude );
 
                 break;
 
             case LONGITUDE_DIR:
 
-                NMEA_Longitude_Dir = slicing;
+                sNMEALongitudeCard = sSentenceSlicer;
 
-                printf ( "NMEA_LONGITUDE_DIR:  %s\n", NMEA_Longitude_Dir );
+                printf ( "CARD_LONGITUDE:  %s\n", sNMEALongitudeCard );
 
                 break;
 
             case DILUITION:
 
-                NMEA_Diluition = slicing;
+                sNMEADiluition = sSentenceSlicer;
 
-                printf ( "NMEA_DILUITION:  %s METERS\n", NMEA_Diluition );
+                printf ( "DILUITION:  %s METERS\n", sNMEADiluition );
 
                 break;
 
@@ -90,6 +84,4 @@ int main ()
                 break;
         }
     }
-
-    return 0;
 }
