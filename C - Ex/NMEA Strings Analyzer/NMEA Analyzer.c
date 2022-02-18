@@ -41,11 +41,6 @@ int main ()
 
                 NMEA_Time = slicing;
 
-                for (  )
-                {
-                    if (  )
-                }
-
                 printf ( "NMEA_TIME:  %s\n", NMEA_Time );
 
                 break;
