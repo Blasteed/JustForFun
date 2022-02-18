@@ -1,4 +1,7 @@
-.idea
+*.settings
+*.project
+*.cproject
+*.idea
 FunnyBase/venv
 FunnyBase/.idea
 FunnyBase/system_files
