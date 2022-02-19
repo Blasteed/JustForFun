@@ -2,9 +2,10 @@
 *.project
 *.cproject
 *.idea
+*.o
+*.exe
 FunnyBase/venv
 FunnyBase/.idea
 FunnyBase/system_files
 AutoTyper/__pycache__
-*.exe
-*.o
+
