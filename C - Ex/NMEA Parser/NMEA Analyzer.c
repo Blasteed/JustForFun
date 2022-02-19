@@ -10,7 +10,7 @@ char* sNMEALatitude;
 char* sNMEALatitudeCard;
 char* sNMEALongitude;
 char* sNMEALongitudeCard;
-// char* sNMEASatellitesNumb;
+char* sNMEASatellitesNumb;
 char* sNMEADiluition;
 
 void Parser ()
@@ -68,6 +68,14 @@ void Parser ()
                 sNMEALongitudeCard = sSentenceSlicer;
 
                 printf ( "CARD_LONGITUDE:  %s\n", sNMEALongitudeCard );
+
+                break;
+
+            case SATELLITES_NUMB:
+
+                sNMEASatellitesNumb = sSentenceSlicer;
+
+                printf ( "SATELLITES_NUMB:  %s\n", sNMEASatellitesNumb );
 
                 break;
 
