@@ -6,17 +6,18 @@
 #include "NMEA.h"
 
 
-int iNMEASatellitesNumb;
+int iNMEASatellitesNumb = 0;
 
-double dNMEADiluition;
-double dNMEALatitude;
-double dNMEALongitude;
+float fNMEADiluition = 0;
+
+double dNMEALatitude  = 0;
+double dNMEALongitude = 0;
 
 char cNMEALatitudeCard;
 char cNMEALongitudeCard;
 
-char sNMEAType[6];
-char sNMEATime[6];
+char sNMEAType[6] = "";
+char sNMEATime[6] = "";
 
 
 void NMEA_Parser ()
@@ -31,7 +32,7 @@ void NMEA_Parser ()
 
     sscanf ( psSentenceSlicer, "%s", sNMEAType );
 
-    while ( psSentenceSlicer != NULL )
+    while ( psSentenceSlicer != NULL && imNMEAElementIndex < DILUITION )
     {
         imNMEAElementIndex++;
 
@@ -77,7 +78,7 @@ void NMEA_Parser ()
 
             case DILUITION:
 
-                sscanf ( psSentenceSlicer, "%lg", &dNMEADiluition );
+                sscanf ( psSentenceSlicer, "%g", &fNMEADiluition );
 
                 break;
 
