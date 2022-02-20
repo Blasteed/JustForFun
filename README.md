@@ -1,2 +1,2 @@
 # JustForFun
-Here some "just for fun" examples in different programming languages. They are differnt type of codes.
+Some examples of different types of codes. Some C, some Python and other stuff to add...
