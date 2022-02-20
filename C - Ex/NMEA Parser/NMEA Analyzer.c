@@ -10,8 +10,8 @@ int iNMEASatellitesNumb = 0;
 
 float fNMEADiluition = 0;
 
-double dNMEALatitude  = 0;
-double dNMEALongitude = 0;
+double lfNMEALatitude  = 0;
+double lfNMEALongitude = 0;
 
 char cNMEALatitudeCard;
 char cNMEALongitudeCard;
@@ -48,7 +48,7 @@ void NMEA_Parser ()
 
             case LATITUDE:
 
-                sscanf ( psSentenceSlicer, "%lg", &dNMEALatitude );
+                sscanf ( psSentenceSlicer, "%lg", &lfNMEALatitude );
 
                 break;
 
@@ -60,7 +60,7 @@ void NMEA_Parser ()
 
             case LONGITUDE:
 
-                sscanf ( psSentenceSlicer, "%lg", &dNMEALongitude );
+                sscanf ( psSentenceSlicer, "%lg", &lfNMEALongitude );
 
                 break;
 
