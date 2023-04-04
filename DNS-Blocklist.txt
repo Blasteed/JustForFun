@@ -1,5 +1,0 @@
-####################### PERSONAL DNS BLOCKLIST FOR PIHOLE
-#
-#
-#
-hisurnhuh.com
