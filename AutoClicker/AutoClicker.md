@@ -1,0 +1,3 @@
+# AutoClicker
+
+A simple Python Script that let you do everything you want while your PC do anything else automatically (only if it needs to be clicked)...
