@@ -1,6 +1,0 @@
-#ifndef SIGNS_ANALYSIS_HPP_INCLUDED
-#define SIGNS_ANALYSIS_HPP_INCLUDED
-
-#define Signs_Analysis.cpp
-
-#endif // SIGNS_ANALYSIS_HPP_INCLUDED

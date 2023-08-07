@@ -1,5 +1,0 @@
-# depslib dependency file v1.0
-1663335844 source:/home/ale/Desktop/RWS/Signs_Analysis.cpp
-	<iostream>
-	<opencv2/core.hpp>
-
