@@ -6,7 +6,7 @@ from time import sleep
 
 
 Octo_Addr = '127.0.0.1' # Localhost, Loopback address
-Octo_API_Key = ''
+Octo_API_Key = '' Fill it with your personal API Key, generated from OctoPrint WebUI
 
 
 
