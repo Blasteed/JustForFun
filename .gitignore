@@ -1,11 +1,43 @@
-*.settings
-*.project
-*.cproject
-*.idea
-*.o
-*.exe
-FunnyBase/venv
-FunnyBase/.idea
-FunnyBase/system_files
-AutoTyper/__pycache__
+# File di sistema operativo
+.DS_Store
+Thumbs.db
 
+# File di compilazione e oggetti
+*.o
+*.obj
+*.exe
+*.bin
+
+# File di debugging
+*.pdb
+*.dbg
+
+# File di Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.egg-info/
+
+# File di virtualenv
+env/
+venv/
+virtualenv/
+
+# File di testing
+*.test
+test_*.py
+
+# File di documentazione
+docs/
+doc/
+
+# File di configurazione di IDE
+.vscode/
+.idea/
+*.iml
+
+# Altri file
+*.log
+*.tmp
+*.bak
